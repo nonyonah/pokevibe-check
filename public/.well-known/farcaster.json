@@ -4,19 +4,19 @@
     "payload": "eyJkb21haW4iOiJwb2tldmliZS1jaGVjay52ZXJjZWwuYXBwIn0",
     "signature": "MHg1Y2NhNDY0MGRjZDI2MjRjMzhmNjAxYjYxZmQxMmYxZjFiZjY3ZDdmZGQ1MDRjZTQ5NGMyNWYxYWM5NGQxNDgwNjEzYWE1ODU3YmYwNWFjODA0NzI4NTNjNDZmNzA4OGIzN2UwMDlhZTkyZWNiODBlNDc5NGI4MWZhOGJjZGQwZTFj"
   },
-  
+
   "frame": {
     "version": "1",
     "name": "PokeVibe Check",
     "iconUrl": "https://pokevibe-check.vercel.app/logo.png",
-    "splashImageUrl": "",
-    "splashBackgroundColor": "",
+    "splashImageUrl": "https://pokevibe-check.vercel.app/logo.png",
+    "splashBackgroundColor": "#ffffff",
     "homeUrl": "https://pokevibe-check.vercel.app",
     "webhookUrl": "https://pokevibe-check.vercel.app/api/webhook",
-    "subtitle": "Discover your Pokemon personality",
+    "subtitle": "Discover your Pokemon personality by answering a few questions and finding your Pokemon personality",
     "description": "Interactive quiz to find your Pokemon match with retro Game Boy styling",
     "screenshotUrls": [
-      ""
+      "https://pokevibe-check.vercel.app/"
     ],
     "primaryCategory": "social",
     "tags": [
@@ -26,7 +26,7 @@
       "retro",
       "miniapp"
     ],
-    "heroImageUrl": "",
+    "heroImageUrl": "https://pokevibe-check.vercel.app/logo.png",
     "tagline": "Find your Pokemon personality!",
     "ogTitle": "PokeVibe Check - Pokemon Personality Quiz",
     "ogDescription": "Discover which Pokemon matches your personality with our interactive retro-styled quiz",
