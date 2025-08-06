@@ -29,8 +29,9 @@ const BuyCoffeeButton: React.FC = () => {
       setSuccessMessage('')
 
       writeContract({
-        to: DONATION_ADDRESS_ETH,
+        to: DONATION_ADDRESS_ETH as `0x${string}`,
         value: parseEther(DONATION_AMOUNT_ETH),
+        data: '0x',
       })
 
     } catch (error) {
@@ -71,7 +72,7 @@ const BuyCoffeeButton: React.FC = () => {
     return `${baseStyle} bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700`
   }
 
-  const isDisabled = isEthPending || isProcessing || isEthSuccess || transactionSuccess
+  const isDisabled = isWritePending || isProcessing || isConfirmed || (transactionStatus === 'success')
 
   return (
     <div className="w-full max-w-md mx-auto p-4 space-y-4">

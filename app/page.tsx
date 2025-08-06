@@ -9,7 +9,7 @@ import QuizScreen from '../components/QuizScreen';
 import ResultScreen from '../components/ResultScreen';
 import { getPokemonById, PokemonData, getQuestionById } from '../data/pokemon-data';
 import { initializeFarcasterSDK } from '../farcaster-sdk-config';
-import { config } from '../lib/wagmi-config';
+import { config, baseChain } from '../lib/wagmi-config';
 
 // Create a client for React Query
 const queryClient = new QueryClient();
@@ -183,7 +183,7 @@ function AppContent() {
 // Main component with providers
 export default function Home() {
   return (
-    <MiniKitProvider>
+    <MiniKitProvider chain={baseChain}>
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
           <AppContent />

@@ -1,38 +1,154 @@
-# 🎮 PokeVibe Check - Farcaster Mini App
+# PokeVibe Check - Farcaster Mini App with Minikit
 
-A retro Nintendo Game Boy-style Pokémon personality quiz built as a Farcaster mini app using Next.js, TypeScript, and Tailwind CSS. Discover which Generation 1 Pokémon matches your vibe through an interactive multi-step quiz!
+A retro Nintendo-style Pokémon personality quiz built as a Farcaster Mini App using Minikit. Discover which Pokémon matches your vibe through an interactive quiz experience!
 
-## ✨ Features
+## Features
 
-- **🎯 Multi-Step Branching Quiz**: Dynamic personality-based questions that adapt based on your answers
-- **🎮 Retro Nintendo Aesthetic**: Authentic Game Boy-inspired design with pixel-perfect styling
-- **🔗 Farcaster Integration**: Built with Farcaster Mini App SDK for seamless social sharing
-- **📱 Responsive Design**: Works perfectly on mobile and desktop
-- **⚡ Fast & Modern**: Built with Next.js 14, TypeScript, and Tailwind CSS
-- **🎨 151 Gen 1 Pokémon**: Complete coverage of all original Pokémon with unique descriptions
-- **📊 Smart Progress Tracking**: Dynamic progress indication based on your unique quiz path
+- 🎮 Retro Nintendo Game Boy aesthetic
+- 🔮 Interactive personality quiz
+- 🎯 Pokémon matching based on your answers
+- 💰 Support the developer with ETH donations on Base network
+- 📱 Optimized for Farcaster frames with Minikit integration
+- 🖼️ Fixed image display with Next.js Image component
 
-## 🚀 Getting Started
+## Tech Stack
+
+- **Frontend**: Next.js 14, React, TypeScript
+- **Styling**: Tailwind CSS with custom Game Boy theme
+- **Blockchain**: Wagmi, Viem, OnchainKit, Minikit
+- **Wallets**: Coinbase Wallet with Farcaster integration
+- **Deployment**: Vercel
+
+## Minikit Integration
+
+This app uses Minikit from OnchainKit to provide seamless wallet integration within Farcaster. Key features:
+
+- **MiniKitProvider**: Wraps the application for global SDK access
+- **Coinbase Wallet**: Smart wallet integration with Farcaster fallback
+- **Base Network**: Optimized for Base mainnet transactions
+- **Manifest**: Proper Farcaster Mini App manifest configuration
+
+## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+ 
 - npm or yarn
+- Farcaster account for testing
 
 ### Installation
 
-1. Clone or download this project
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd pokevibe-check
+```
+
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
+3. Set up environment variables:
+```bash
+# Copy the .env file and update values as needed
+cp .env .env.local
+```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Run the development server:
+```bash
+npm run dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your GitHub repository to Vercel
+3. Deploy with default settings
+4. Add your environment variables in Vercel dashboard
+
+### Manual GitHub Setup
+
+Since GitHub CLI is not available, follow these steps:
+
+1. Go to [GitHub](https://github.com) and create a new repository
+2. Copy the repository URL
+3. Add the remote origin:
+```bash
+git remote add origin <your-github-repo-url>
+git branch -M main
+git push -u origin main
+```
+
+## Environment Variables
+
+```env
+# Minikit Configuration
+NEXT_PUBLIC_MINIKIT_APP_NAME="PokeVibe Check"
+NEXT_PUBLIC_MINIKIT_APP_DESCRIPTION="Discover your Pokemon personality through an interactive quiz"
+
+# Base Network Configuration
+NEXT_PUBLIC_CHAIN_ID=8453
+NEXT_PUBLIC_RPC_URL=https://mainnet.base.org
+
+# App Configuration
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# Optional: Coinbase Developer Platform
+# NEXT_PUBLIC_CDP_API_KEY=your_cdp_api_key_here
+```
+
+## Features
+
+### Quiz System
+- Multiple choice questions that determine personality traits
+- Dynamic scoring system
+- 150+ Pokémon results with detailed descriptions
+
+### Wallet Integration
+- **Ethereum (Base)**: Minikit with Coinbase Wallet integration
+- **Smart Wallet**: Preference for smart wallet functionality
+- Secure donation system with transaction feedback
+- Removed Solana support for simplified user experience
+
+### Responsive Design
+- Mobile-first approach
+- Game Boy-inspired pixel art styling
+- Smooth animations and transitions
+- Fixed image loading with proper fallbacks
+
+## Recent Updates
+
+### Minikit Implementation
+- ✅ Replaced Farcaster Mini App connector with Minikit
+- ✅ Integrated OnchainKit and Coinbase Wallet
+- ✅ Removed Solana support for simplified experience
+- ✅ Added proper manifest.json for Farcaster Mini Apps
+- ✅ Fixed image display issues with Next.js Image component
+- ✅ Updated environment variables for Minikit configuration
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Pokémon data and sprites from [PokéAPI](https://pokeapi.co/)
+- Retro styling inspired by Nintendo Game Boy
+- Built for the Farcaster ecosystem with Minikit
+- Powered by Base and OnchainKit
 
 ## 🏗️ Project Structure
 
