@@ -27,6 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="fc:frame" content="vNext" />
+        <meta name="fc:frame:image" content="https://localhost:3000/manifest.json" />
+        <meta name="fc:frame:button:1" content="Start Quiz" />
+        <meta name="fc:frame:post_url" content="https://localhost:3000" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link 

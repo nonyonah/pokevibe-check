@@ -1,18 +1,16 @@
 import { http, createConfig } from 'wagmi'
 import { base } from 'wagmi/chains'
-import { coinbaseWallet } from 'wagmi/connectors'
+import { farcasterMiniApp as miniAppConnector } from '@farcaster/miniapp-wagmi-connector'
 
 export const config = createConfig({
   chains: [base],
-  connectors: [
-    coinbaseWallet({
-      appName: 'PokeVibe Check',
-      preference: 'smartWalletOnly',
-    }),
-  ],
   transports: {
     [base.id]: http(),
   },
+  connectors: [
+    miniAppConnector()
+  ],
+  ssr: true,
 })
 
 export const baseChain = base

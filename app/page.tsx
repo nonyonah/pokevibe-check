@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { WagmiProvider } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { MiniKitProvider } from '@coinbase/onchainkit/minikit';
 import WelcomeScreen from '../components/WelcomeScreen';
 import QuizScreen from '../components/QuizScreen';
 import ResultScreen from '../components/ResultScreen';
@@ -12,7 +11,13 @@ import { initializeFarcasterSDK } from '../farcaster-sdk-config';
 import { config, baseChain } from '../lib/wagmi-config';
 
 // Create a client for React Query
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
+});
 
 // App states
 type AppState = 'welcome' | 'quiz' | 'result';
@@ -183,12 +188,10 @@ function AppContent() {
 // Main component with providers
 export default function Home() {
   return (
-    <MiniKitProvider chain={baseChain}>
-      <WagmiProvider config={config}>
-        <QueryClientProvider client={queryClient}>
-          <AppContent />
-        </QueryClientProvider>
-      </WagmiProvider>
-    </MiniKitProvider>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <AppContent />
+      </QueryClientProvider>
+    </WagmiProvider>
   );
 }

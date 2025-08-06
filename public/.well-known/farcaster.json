@@ -1,0 +1,34 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjkxNTIsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgwMmVmNzkwRGQ3OTkzQTM1ZkQ4NDdDMDUzRURkQUU5NDBEMDU1NTk2In0",
+    "payload": "eyJkb21haW4iOiJsb2NhbGhvc3Q6MzAwMCJ9",
+    "signature": "MHgxMGQwZGU4ZGYwZDUwZTdmMGIxN2YxMTU2NDI1MjRmZTY0MTUyZGU4ZGU1MWU0MThiYjU4ZjVmZmQxYjRjNDBiNGVlZTRhNDcwNmVmNjhlMzQ0ZGQ5MDBkYmQyMmNlMmVlZGY5ZGQ0N2JlNWRmNzMwYzUxNjE4OWVjZDJjY2Y0MDFj"
+  },
+  "frame": {
+    "version": "1",
+    "name": "PokeVibe Check",
+    "iconUrl": "https://localhost:3000/manifest.json",
+    "splashImageUrl": "https://localhost:3000/manifest.json",
+    "splashBackgroundColor": "#8B956D",
+    "homeUrl": "https://localhost:3000",
+    "webhookUrl": "https://localhost:3000/api/webhook",
+    "subtitle": "Discover your Pokemon personality",
+    "description": "Interactive quiz to find your Pokemon match with retro Game Boy styling",
+    "screenshotUrls": [
+      "https://localhost:3000/manifest.json"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "pokemon",
+      "quiz",
+      "gameboy",
+      "retro",
+      "miniapp"
+    ],
+    "heroImageUrl": "https://localhost:3000/manifest.json",
+    "tagline": "Find your Pokemon personality!",
+    "ogTitle": "PokeVibe Check - Pokemon Personality Quiz",
+    "ogDescription": "Discover which Pokemon matches your personality with our interactive retro-styled quiz",
+    "ogImageUrl": "https://localhost:3000/manifest.json"
+  }
+}

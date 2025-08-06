@@ -108,7 +108,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ pokemon, onRestart }) => {
           </button>
 
           {/* Buy Coffee Button */}
-          <BuyCoffeeButton />
+          <BuyCoffeeButton pokemonName={pokemon.name} />
 
           <button
             onClick={onRestart}
