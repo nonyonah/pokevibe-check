@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi'
+import { useAccount, useSendTransaction, useWaitForTransactionReceipt } from 'wagmi'
 import { parseEther } from 'viem'
 
 const DONATION_ADDRESS_ETH = '0xb188Fed9cD770637A151a0FA1E8d990d90149Bd5'
@@ -15,7 +15,7 @@ const BuyCoffeeButton: React.FC = () => {
 
   // Ethereum hooks
   const { address: ethAddress, isConnected: isEthConnected } = useAccount()
-  const { writeContract, data: hash, error: writeError, isPending: isWritePending } = useWriteContract()
+  const { sendTransaction, data: hash, error: sendError, isPending: isSendPending } = useSendTransaction()
   
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({
     hash,
@@ -28,10 +28,9 @@ const BuyCoffeeButton: React.FC = () => {
       setErrorMessage('')
       setSuccessMessage('')
 
-      writeContract({
+      sendTransaction({
         to: DONATION_ADDRESS_ETH as `0x${string}`,
         value: parseEther(DONATION_AMOUNT_ETH),
-        data: '0x',
       })
 
     } catch (error) {
@@ -50,7 +49,7 @@ const BuyCoffeeButton: React.FC = () => {
   }
 
   // Handle transaction error
-  if (writeError && transactionStatus === 'pending') {
+  if (sendError && transactionStatus === 'pending') {
     setErrorMessage('Failed to send donation. Please try again.')
     setTransactionStatus('error')
     setIsProcessing(false)
@@ -58,28 +57,28 @@ const BuyCoffeeButton: React.FC = () => {
 
   const getButtonText = () => {
     if (!isEthConnected) return 'Connect Wallet'
-    if (isProcessing || isWritePending || isConfirming) return 'Processing...'
+    if (isProcessing || isSendPending || isConfirming) return 'Processing...'
     return `Buy Coffee ☕ (${DONATION_AMOUNT_ETH} ETH)`
   }
 
   const getButtonStyle = () => {
     const baseStyle = "w-full px-6 py-3 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg"
     
-    if (isProcessing || isWritePending || isConfirming) {
+    if (isProcessing || isSendPending || isConfirming) {
       return `${baseStyle} bg-gray-400 cursor-not-allowed`
     }
     
     return `${baseStyle} bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700`
   }
 
-  const isDisabled = isWritePending || isProcessing || isConfirmed || (transactionStatus === 'success')
+  const isDisabled = isSendPending || isProcessing || isConfirmed || (transactionStatus === 'success')
 
   return (
     <div className="w-full max-w-md mx-auto p-4 space-y-4">
       {/* Donation Button */}
       <button
         onClick={handleDonate}
-        disabled={isProcessing || isWritePending || isConfirming}
+        disabled={isProcessing || isSendPending || isConfirming}
         className={getButtonStyle()}
       >
         {getButtonText()}
