@@ -25,11 +25,6 @@
       "gameboy",
       "retro",
       "miniapp"
-    ],
-    "heroImageUrl": "https://pokevibe-check.vercel.app/logo.png",
-    "tagline": "Find your Pokemon personality!",
-    "ogTitle": "PokeVibe Check - Pokemon Personality Quiz for everyone to enjoy and have fun with in a retro style quiz",
-    "ogDescription": "Discover which Pokemon matches your personality with our interactive retro-styled quiz",
-    "ogImageUrl": "https://pokevibe-check.vercel.app/logo.png"
+    ]
   }
 }
