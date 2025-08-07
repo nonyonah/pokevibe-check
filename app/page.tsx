@@ -1,23 +1,11 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { WagmiProvider } from 'wagmi';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import WelcomeScreen from '../components/WelcomeScreen';
 import QuizScreen from '../components/QuizScreen';
 import ResultScreen from '../components/ResultScreen';
 import { getPokemonById, PokemonData, getQuestionById } from '../data/pokemon-data';
 import { initializeFarcasterSDK } from '../farcaster-sdk-config';
-import { config, baseChain } from '../lib/wagmi-config';
-
-// Create a client for React Query
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 60 * 1000,
-    },
-  },
-});
 
 // App states
 type AppState = 'welcome' | 'quiz' | 'result';
@@ -185,13 +173,7 @@ function AppContent() {
   }
 }
 
-// Main component with providers
+// Main component
 export default function Home() {
-  return (
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <AppContent />
-      </QueryClientProvider>
-    </WagmiProvider>
-  );
+  return <AppContent />;
 }

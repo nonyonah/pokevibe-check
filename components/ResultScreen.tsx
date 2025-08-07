@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { PokemonData } from '../data/pokemon-data';
 import { shareVibeResult } from '../farcaster-sdk-config';
-import BuyCoffeeButton from './BuyCoffeeButton';
 
 interface ResultScreenProps {
   pokemon: PokemonData;
@@ -106,9 +105,6 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ pokemon, onRestart }) => {
           >
             {isSharing ? 'SHARING...' : shareSuccess ? 'SHARED!' : 'CAST YOUR VIBE!'}
           </button>
-
-          {/* Buy Coffee Button */}
-          <BuyCoffeeButton pokemonName={pokemon.name} />
 
           <button
             onClick={onRestart}
