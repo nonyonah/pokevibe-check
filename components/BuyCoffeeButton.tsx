@@ -24,7 +24,7 @@ const BuyCoffeeButton: React.FC<BuyCoffeeButtonProps> = ({ pokemonName }) => {
 
     try {
       await sendTransaction({
-        to: '0xb188Fed9cD770637A151a0FA1E8d990d90149Bd5' as `0x${string}`,
+        to: '0x869a1E10cA4d1e1223676C0a4214C6cC10023244' as `0x${string}`,
         value: parseEther('0.001'),
       });
     } catch (error) {
